@@ -12,7 +12,7 @@ public class InAppContextLoaderListener extends ContextLoaderListener {
 	}
 	
 	private void initInAppCfg() {
-		System.out.println("customed initialization...");
+		System.out.println("InAppContextLoaderListener is config in web and run first before servlet");
 	}
 
 }
