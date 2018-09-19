@@ -23,6 +23,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:config.properties</value>
+				<value>classpath:env_${ENV}.properties</value>
 			</list>
 		</property>
 	</bean>

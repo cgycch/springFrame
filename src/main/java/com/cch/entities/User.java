@@ -1,7 +1,11 @@
 package com.cch.entities;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
-	
+	@Value("#{'chenchunhui'}")
 	private String userName;
 	private String password;
 	
@@ -20,6 +24,10 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String getALiasName() {
+		return "your are so beautiful";
 	}
 
 	@Override
