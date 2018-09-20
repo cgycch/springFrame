@@ -24,7 +24,7 @@ public class MailBean {
 	@Value("${mail.bcc:default}")
 	private String bcc;
 	
-	@Value("#{user.toString()}")
+	@Value("#{user.getALiasName()}")
 	private String attach;
 	
 	@Value("#{user.userName}")

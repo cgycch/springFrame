@@ -16,6 +16,7 @@ public class MailBeanTest extends BaseUnit{
 	@Test
 	public void test() {
 		System.out.println(mailbean);
+		System.out.println(new MailBean());
 	}
 	
 	
