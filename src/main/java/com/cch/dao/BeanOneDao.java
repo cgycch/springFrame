@@ -7,5 +7,7 @@ import com.cch.entities.BeanOne;
 public interface BeanOneDao {
 	
 	List<BeanOne> findALl();
+	void update();
+	void insert();
 
 }

@@ -48,4 +48,18 @@ public class BeanOneImpl implements BeanOneDao {
 		return jdbctemplate.query(sql, mapper());
 	}
 
+	@Override
+	public void update() {
+		String sql ="update t_report set rname = ? ,rdate = ? where rid = ?";
+		Object[] args = new Object[] {"NAME_AA","2018-08-16","r0"};
+		jdbctemplate.update(sql, args);
+	}
+
+	@Override
+	public void insert() {
+		String sql ="insert into t_report(rid,rname,rdate) values(?,?,?)";
+		Object[] args = new Object[] {"r001","NAME_ASD","2018-08-16"};
+		jdbctemplate.update(sql, args);
+	}
+
 }
