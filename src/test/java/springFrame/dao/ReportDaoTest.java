@@ -28,6 +28,7 @@ public class ReportDaoTest extends BaseUnit {
 		System.out.println("showMemory: "+RunUtils.showMemoryInfo());
 		System.out.println("takes time(S): "+(etime-stime)/1000d);
 	}
+	
 	@Test
 	public void batchInsertTest() {
 		System.out.println("start");

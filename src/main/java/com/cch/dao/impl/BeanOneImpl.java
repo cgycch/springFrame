@@ -2,20 +2,21 @@ package com.cch.dao.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.cch.dao.ReportDao;
+import com.cch.dao.BeanOneDao;
 import com.cch.entities.BeanOne;
 
 @Repository
-public class ReportDaoImpl implements ReportDao {
+public class BeanOneImpl implements BeanOneDao {
 	
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
-	
+	@Resource(name="myJdbcTemplate")
+	private JdbcTemplate jdbctemplate;
+
 	private RowMapper<BeanOne> mapper() {
 		return (rs, rowNum) -> {
 		    BeanOne report = new BeanOne();
@@ -42,34 +43,9 @@ public class ReportDaoImpl implements ReportDao {
 	}
 
 	@Override
-	public List<BeanOne> findAll() {
+	public List<BeanOne> findALl() {
 		String sql = "select * from t_report where 1=1";
-		return jdbcTemplate.query(sql, mapper());
+		return jdbctemplate.query(sql, mapper());
 	}
-	
-	
-
-	@Override
-	public void insertReoprt() {
-		System.out.println("insertUser just use for insert report data");
-		long start = System.currentTimeMillis();
-		System.out.println("start:"+start);
-		String[] sqlAry= new String[3000];
-		int offset = 0;
-		for (int i=0; i< sqlAry.length; i++) {
-			int idx = offset + i;
-			sqlAry[i] = "insert into t_report (rid, rname, rname2, rname3, rname4, rname5, rname6, rname7, rname8, "
-					+ "rint, rint2, rdate, rdate2, rdouble, rdouble2, rfloat, rfloat2) "
-					+ "values('r"+idx+"','tname','rname2','rname3','rname4','rname5','rname6','rname7','rname8',"
-					+ "'1','2','2018-09-01 00:01:51','2018-09-02 00:01:59','123.456','456.123','1.2','2.3');";
-		}
-		jdbcTemplate.batchUpdate(sqlAry);
-		long end = System.currentTimeMillis();
-		System.out.println("end:"+end);
-		System.out.println("takes (S):"+(end-start)/1000d);
-	}
-
-	
-	
 
 }

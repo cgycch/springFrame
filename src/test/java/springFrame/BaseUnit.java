@@ -11,6 +11,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class BaseUnit {
 	@BeforeClass
 	public static void beforeIoc() {
+		if(System.getProperty("ENV")==null) {
+			System.setProperty("ENV", "DEV");
+		}
 		System.out.println("BaseUnit is runing");
 	}
 
