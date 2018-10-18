@@ -16,12 +16,6 @@ public class BeanOneDaoTest extends BaseUnit{
 	@Test
 	public void test() {
 		assertNotNull(dao);
-		
-		System.out.println(dao.findALl().size());
-		dao.update();
-		System.out.println("===");
-		dao.insert();
-		System.out.println("===");
 	}
 
 }

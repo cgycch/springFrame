@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MailBean {
+public class MailBean implements Cloneable{
 	
 	@Value("${mail.host}")
 	private String host;
