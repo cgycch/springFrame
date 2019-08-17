@@ -1,7 +1,6 @@
 package com.cch.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -9,9 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cch.InAppBeanFactory;
-import com.cch.dao.BeanOneDao;
-import com.cch.entities.BeanOne;
+import com.cch.spring.SpringProvicer;
 
 public class BasicServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,10 +20,8 @@ public class BasicServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
     	super.init(config);
-    	 System.out.println("BasicServlet::init()");
-    	 BeanOneDao dao = InAppBeanFactory.getBean(BeanOneDao.class);
-    	 List<BeanOne>  list = dao.findALl();
-    	 System.out.println(list.size());
+    	System.out.println("BasicServlet::init()");
+    	SpringProvicer.init();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

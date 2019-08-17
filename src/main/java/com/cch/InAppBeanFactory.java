@@ -15,10 +15,9 @@ public class InAppBeanFactory implements ApplicationContextAware {
 		System.out.println("InAppBeanFactory::setApplicationContext()");
 		InAppBeanFactory.applicationContext = context;
 	}
-
-	@SuppressWarnings("unchecked")
+	
 	public static <T> T getBean(Class<T> cls) {
-		return (T) applicationContext.getBean(cls.getSimpleName());
+		return (T) applicationContext.getBean(cls);
 	}
 
 	public static Object getBean(String beanName) {

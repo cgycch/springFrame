@@ -11,6 +11,7 @@ public class User {
 	
 	public User() {
 		super();
+		System.out.println("User init...");
 	}
 	
 	public String getUserName() {

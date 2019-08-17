@@ -17,6 +17,14 @@
 	</properties>
 
 	<dependencies>
+		<!-- local jar defined by your self -->
+		<dependency>
+			<groupId>com.cch.service</groupId>
+			<artifactId>mybaseService</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
 		<!-- spring dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -100,6 +108,11 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.34</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.4.0</version>
 		</dependency>
 
 		<!-- apache POI begin -->
