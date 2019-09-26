@@ -51,7 +51,7 @@ public class BeanOneImpl implements BeanOneDao {
 	@Override
 	public void update() {
 		String sql ="update t_report set rname = ? ,rdate = ? where rid = ?";
-		Object[] args = new Object[] {"NAME_AA","2018-08-16","r0"};
+		Object[] args = new Object[] {"NAME_AA","2018-08-16","r_"+System.currentTimeMillis()};
 		jdbctemplate.update(sql, args);
 	}
 

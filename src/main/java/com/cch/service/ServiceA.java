@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServiceA {
 	public ServiceA() {
-		System.out.println("ServiceA.ServiceA()");
+		//System.out.println("ServiceA.ServiceA()");
 	}
 	
 	public String sayHello() {

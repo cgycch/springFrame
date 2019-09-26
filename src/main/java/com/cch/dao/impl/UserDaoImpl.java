@@ -42,5 +42,12 @@ public class UserDaoImpl implements UserDao {
 		jdbcTemplate.execute(callString, action);
 		return jdbcTemplate.execute(callString, action);
 	}
+	
+	@Override
+	public void update(String name,String id) {
+		String sql ="update t_user set user_name = ? where user_id = ?";
+		Object[] args = new Object[] {name+"_"+System.currentTimeMillis(),id};
+		jdbcTemplate.update(sql, args);
+	}
 
 }
