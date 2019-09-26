@@ -91,5 +91,31 @@ public class ServiceOut {
 			System.out.println("error"+1/0);
 		}
 	}
-
+	
+	@Transactional
+	public void methodFor() {
+		for (int i = 1; i < 5; i++) {
+			try {
+				boolean flag = true;
+				if(i==3) {
+					flag = false;
+				}
+				//itemofFor(i, flag);//not effective
+				serviceInt.itemofFor(i, flag);//effective
+			} catch (Exception e) {
+				System.out.println("error:>>>>> "+ e.getMessage());
+			}
+		}
+	}
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void itemofFor(int i, boolean success) {
+		dao.update("10001", "1000"+1);
+		if(success) {
+			System.out.println("ServiceOut.methodB() success on "+ i);
+		}else {
+			System.out.println("ServiceOut.methodB()  failed "+ i);
+			System.out.println("error"+1/0);
+		}
+	}
 }

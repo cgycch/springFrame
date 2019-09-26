@@ -39,6 +39,10 @@ public class Service4TransactionTest extends BaseUnit{
 		boolean b = false;
 		serviceOut.methodA(a,b);
 	}
+	@Test
+	public void methodFor() {
+		serviceOut.methodFor();
+	}
 	
 
 }

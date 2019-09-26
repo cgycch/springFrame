@@ -24,5 +24,16 @@ public class ServiceInt {
 			System.out.println("cound not go here i="+i);
 		}
 	}
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void itemofFor(int i, boolean success) {
+		dao.update("10001", "1000"+i);
+		if(success) {
+			System.out.println("ServiceOut.methodB() success on "+ i);
+		}else {
+			System.out.println("ServiceOut.methodB()  failed "+ i);
+			System.out.println("error"+1/0);
+		}
+	}
 
 }
